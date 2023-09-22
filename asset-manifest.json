@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/s-audio-1.git/static/css/main.073c9b0a.css",
+    "main.js": "/s-audio-1.git/static/js/main.fce28237.js",
+    "static/js/787.eeb1709c.chunk.js": "/s-audio-1.git/static/js/787.eeb1709c.chunk.js",
+    "static/media/logo.svg": "/s-audio-1.git/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/s-audio-1.git/index.html",
+    "main.073c9b0a.css.map": "/s-audio-1.git/static/css/main.073c9b0a.css.map",
+    "main.fce28237.js.map": "/s-audio-1.git/static/js/main.fce28237.js.map",
+    "787.eeb1709c.chunk.js.map": "/s-audio-1.git/static/js/787.eeb1709c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.fce28237.js"
+  ]
+}

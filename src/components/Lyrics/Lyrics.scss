@@ -1,0 +1,25 @@
+@import '../../var.scss';
+
+.lyrics{
+   padding-top: 90px;
+   font-size: 24px;
+   font-weight: 500;
+   line-height: 1.1;
+   
+   p{
+      height: calc(100vh - 90px);
+      overflow-y: auto;
+      word-wrap: break-word;
+
+      &::-webkit-scrollbar{
+         width: 5px;
+         background-color: rgbs(0,0,0,0);
+      }
+
+      &::-webkit-scrollbar-thumb{
+         width: 5px;
+         height: 95px;
+         background-color: $main-grey;
+      }
+   }
+}

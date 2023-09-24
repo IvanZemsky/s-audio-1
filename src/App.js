@@ -1,11 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import SongList from './components/SongList/SongList';
+import Controls from './components/Controls/Controls'
+import Lyrics from './components/Lyrics/Lyrics'
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <h1>hi</h1>
-    </div>
+    <main className="App">
+      <SongList />
+      <Controls />
+      <Lyrics />
+    </main>
   );
 }
 

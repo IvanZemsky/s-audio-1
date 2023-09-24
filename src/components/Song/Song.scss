@@ -1,0 +1,104 @@
+@import '../../_var.scss';
+
+.song{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 15px;
+   margin-right: 104px;
+   cursor: pointer;
+
+   .song-info{
+      display: flex;
+      align-items: center;
+      gap: 18px;
+
+      .song-info_cover{
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 60px;
+         height: 60px;
+         background-color: #F0F0F0;
+         border-radius: 10px;
+
+         .song-animation{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 15px 15px;
+            width: 100%;
+            height: 100%;
+            display: none; /* flex */
+            background-color: rgb(49, 49, 49);
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            transform: translate(-50%, -50%);
+            z-index: 50;
+
+            & div{
+               width: 3px;
+               background-color: #fff;
+               transition: height 1s linear;
+            }
+
+            & div:nth-child(1){
+               height: 75%;
+            }
+            & div:nth-child(2){
+               height: 100%;
+            }
+            & div:nth-child(3){
+               height: 90%;
+            }
+            & div:nth-child(4){
+               height: 80%;
+            }
+         }
+         
+         .song-cover_placeholder{
+            width: 26px;
+            height: 36px;
+         }
+
+      }
+   }
+
+   .song-name{
+      margin-bottom: 9px;
+      font-weight: 500;
+   }
+
+   .song-singer{
+      color: $main-grey;
+   }
+
+   .song-time-menu{
+      display: flex;
+      align-items: center;
+      gap: 35px;
+   }
+
+   .song-time{
+      color: $main-grey;
+   }
+
+   .song-menu{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      width: 12px;
+      height: 30px;
+      cursor: pointer;
+
+      &_circle{
+         width: 6px;
+         height: 6px;
+         border-radius: 50%;
+         background-color: $main-grey;
+      }
+   }
+}

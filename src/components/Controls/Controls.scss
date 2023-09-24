@@ -1,0 +1,113 @@
+@import '../../_var.scss';
+
+.controls{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 35px;
+}
+
+.controls-content{
+   max-width: 474px;
+   width: 100%;
+}
+
+.controls-cover{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 474px; /* js */
+   margin-bottom: 49px;
+   border-radius: 100px;
+   background-color: #D9D9D9;
+}
+
+.controls-placeholder{
+   width: 188px;
+   height: 261px;
+}
+
+.controls-timeline_wrap{
+   margin-bottom: 27px;
+}
+
+#songTimeline{
+   -webkit-appearance: none;
+   width: 100%;
+   height: 5px;
+   margin-bottom: 21px;
+   background-color: $main-blue;
+   cursor: pointer;
+
+   &::-webkit-slider-thumb{
+      -webkit-appearance: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $main-blue;
+      transform: scale(1.4);
+      cursor: pointer;
+   }
+}
+
+.controls-time{
+   display: flex;
+   justify-content: space-between;
+   font-size: 20px;
+   color: $main-grey;
+}
+
+.controls-info{
+   text-align: center;
+   margin-bottom: 56px;
+
+   .controls-name{
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 11px;
+   }
+
+   .controls-singer{
+      font-size: 28px;
+      color: $main-blue;
+   }
+}
+
+.controls-buttons{
+   display: flex;
+   justify-content: space-between;
+   gap: 35px;
+   max-width: 310px;
+   margin: 0 auto 54px auto;
+
+   button{
+      cursor: pointer;
+   }
+
+   .controls-play{
+      width: 44px;
+      height: 50px;
+   }
+   
+   .controls-previous,
+   .controls-next{
+      width: 31px;
+      height: 36px;
+   }
+   
+   .controls-next{
+      transform: rotate(180deg);
+   }
+}
+
+#repeatSong{
+   display: block;
+   margin: 0 auto;
+   cursor: pointer;
+
+   .controls-repeat{
+      width: 39px;
+      height: 39px;
+   }
+}

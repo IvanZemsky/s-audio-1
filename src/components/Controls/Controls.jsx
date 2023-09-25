@@ -1,9 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './Controls.scss';
 
 function Controls() {
 
   const [timelineValue, setTimelineValue] = useState(0);
+
+  const controlsRef = useRef(null);
+  
+  useEffect(() => {
+    if (window.innerHeight < 1030) {
+      const scaleValue = (window.innerHeight / 900).toFixed(2);
+      console.log(scaleValue);
+      controlsRef.current.style.transform = `scale(${scaleValue})`;
+    }
+  }, []);
 
   const handleTimeline = (event) => {
     setTimelineValue(event.target.value);
@@ -11,7 +21,7 @@ function Controls() {
 
   return (
     <section className="controls">
-      <div className="controls-content">
+      <div className="controls-content" ref={controlsRef}>
         <audio src="../../song-data/song-files/battle-of-the-dragons.mp3"></audio>
         <div className="controls-cover">
           <svg className='controls-placeholder' viewBox="0 0 188 261" fill="none" xmlns="http://www.w3.org/2000/svg">

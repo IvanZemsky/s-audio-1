@@ -2,12 +2,14 @@
 
 .lyrics{
    padding-top: 90px;
-   font-size: 24px;
    font-weight: 500;
    line-height: 1.1;
+   transform-origin: top;
    
    p{
+      padding-right: 10px;
       height: calc(100vh - 90px);
+      font-size: 24px;
       overflow-y: auto;
       word-wrap: break-word;
 
@@ -22,4 +24,12 @@
          background-color: $main-grey;
       }
    }
+}
+
+@media (max-width: 1410px) {
+   
+   .lyrics p{
+      font-size: 20px;
+   }
+
 }

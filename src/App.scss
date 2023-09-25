@@ -1,11 +1,13 @@
 .App{
-   display: grid;
-   grid-template-rows: 100vh;
-   grid-template-columns: 35.52% 38.16% 26.32%;
    width: 100vw;
    height: 100vh;
    padding: 0 4.69%;
 
+   .main-content{
+      display: grid;
+      grid-template-rows: 100vh;
+      grid-template-columns: 43.7% 56.3%;
+   }
    
 }
 
@@ -15,10 +17,4 @@
    .lyrics{
       padding-top: 50px;
    }
-/*
-   .controls{
-      transform: scale(0.9);
-      transform-origin:  0 0;
-   }
-   */
 }

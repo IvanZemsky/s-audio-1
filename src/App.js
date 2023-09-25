@@ -6,9 +6,11 @@ import './App.scss';
 function App() {
   return (
     <main className="App">
-      <SongList />
+      <div className="main-content">
+        <SongList />
+        <Lyrics />
+      </div>
       <Controls />
-      <Lyrics />
     </main>
   );
 }

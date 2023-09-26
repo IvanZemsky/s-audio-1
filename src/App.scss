@@ -1,12 +1,13 @@
 .App{
    width: 100vw;
    height: 100vh;
-   padding: 0 4.69%;
 
    .main-content{
       display: grid;
       grid-template-rows: 100vh;
-      grid-template-columns: 43.7% 56.3%;
+      grid-template-columns: minmax(auto, 730px) 1fr;
+
+      margin: 0 auto 0 2.34vw;
    }
    
 }

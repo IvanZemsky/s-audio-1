@@ -13,9 +13,9 @@
 .controls-content{
    display: grid;
    grid-template-rows: auto;
-   grid-template-columns: minmax(auto, 685px) 1fr;
+   grid-template-columns: 685px 1fr;
    align-items: center;
-   gap: 34px; /* percent and two values */
+   gap: 34px;
    width: 100%;
    height: 90px;
    padding: 23px 0;
@@ -30,13 +30,18 @@
 }
 
 .controls-additional{
-   gap: 94px; /* percent and two values */
+   gap: 9.21%;
 }
 
-.controls-info{
+.controls-info-wrap{
    margin-right: 65px;
-   font-size: 32px;
-   font-weight: 500;
+   overflow: hidden;
+
+   .controls-info{
+      font-size: 32px;
+      font-weight: 500;
+      white-space: nowrap;
+   }
 }
 
 #copySongInfo{
@@ -52,7 +57,8 @@
 .controls-buttons{
    display: flex;
    justify-content: space-between;
-   gap: 48px;
+   gap: 49px;
+   width: 29.01%;
    max-width: 310px;
 
    button{
@@ -78,6 +84,7 @@
 .controls-timeline{
    display: flex;
    align-items: center;
+   width: 53.24%;
 
    p:nth-child(1){
       margin-right: 11px;
@@ -90,7 +97,7 @@
    }
 
    #songTimeline{
-      width: 447px;
+      width: 83.85%;
       margin-right: 7px;
    }
 }
@@ -98,7 +105,6 @@
 #songTimeline,
 #songVolume{
    -webkit-appearance: none;
-   width: 100%;
    height: 5px;
    background-color: $main-blue;
    cursor: pointer;
@@ -117,10 +123,11 @@
 .controls-volume{
    display: flex;
    align-items: center;
+   width: 25.38%;
    gap: 14px;
 
    #songVolume{
-      width: 225px;
+      width: 96.59%;
    }
 
    .controls-volume_img svg{
@@ -130,8 +137,8 @@
 }
 
 #repeatSong{
+   flex-shrink: 0;
    cursor: pointer;
-   margin-left: auto;
 
    .controls-repeat{
       width: 39px;

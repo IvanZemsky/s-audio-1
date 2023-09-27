@@ -22,7 +22,7 @@ function Controls() {
         <audio src="../../song-data/song-files/battle-of-the-dragons.mp3"></audio>
 
         <div className="controls-common">
-          <div className="controls-name-wrap">
+          <div className="controls-info-wrap">
             <p className="controls-info">Song name - Singer</p>
           </div>
 

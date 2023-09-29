@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/s-audio-1/static/css/main.4f1f4108.css",
-    "main.js": "/s-audio-1/static/js/main.3f6f9a04.js",
+    "main.css": "/s-audio-1/static/css/main.6dd1f523.css",
+    "main.js": "/s-audio-1/static/js/main.fbfd45ec.js",
+    "static/media/UpbeatInspiration.mp3": "/s-audio-1/static/media/UpbeatInspiration.0abaf0898cffbff8172d.mp3",
+    "static/media/battle-of-the-dragons.mp3": "/s-audio-1/static/media/battle-of-the-dragons.8a3bddd4d5649503333e.mp3",
+    "static/media/happy-day-background.mp3": "/s-audio-1/static/media/happy-day-background.b231ac4b339c8547c9bd.mp3",
     "static/media/Poppins-Regular.ttf": "/s-audio-1/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Medium.ttf": "/s-audio-1/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
     "static/media/Poppins-ExtraBold.ttf": "/s-audio-1/static/media/Poppins-ExtraBold.01849ee091e1762a5dd5.ttf",
+    "static/media/happy-day-cover.jpg": "/s-audio-1/static/media/happy-day-cover.c8804a59b805514a439a.jpg",
+    "static/media/upbeat-inspiration-cover.jpg": "/s-audio-1/static/media/upbeat-inspiration-cover.f82bb9e8ad989753ac87.jpg",
+    "static/media/battle-dragons-cover.jpg": "/s-audio-1/static/media/battle-dragons-cover.880c9c1fd18a38c1f298.jpg",
     "index.html": "/s-audio-1/index.html",
-    "main.4f1f4108.css.map": "/s-audio-1/static/css/main.4f1f4108.css.map",
-    "main.3f6f9a04.js.map": "/s-audio-1/static/js/main.3f6f9a04.js.map"
+    "main.6dd1f523.css.map": "/s-audio-1/static/css/main.6dd1f523.css.map",
+    "main.fbfd45ec.js.map": "/s-audio-1/static/js/main.fbfd45ec.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f1f4108.css",
-    "static/js/main.3f6f9a04.js"
+    "static/css/main.6dd1f523.css",
+    "static/js/main.fbfd45ec.js"
   ]
 }

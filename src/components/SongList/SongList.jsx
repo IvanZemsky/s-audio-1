@@ -1,30 +1,23 @@
 import React from 'react';
+import { useContext } from 'react';
+
 import Song from '../Song/Song';
+import { songList } from '../../song-data/song-list.js';
 import './SongList.scss';
 
 function SongList() {
+
   return (
     <section className="song-list">
       <h1 className='song-list_title'>Your music</h1>
 
-      
-        <div className="song-list_songs">
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-        </div>
-      
-    </section>   
+      <ul className="song-list_songs">
+        {songList.map(item => (
+          <Song key={item.id} songData={item} />
+        ))}
+      </ul>
+
+    </section>
   )
 }
 

@@ -1,7 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import './Controls.scss';
+import { SongContext } from '../../context/song-context';
 
 function Controls() {
+
+  const {audioPath} = useContext(SongContext);
 
   const [timelineValue, setTimelineValue] = useState(0);
   const [volumeValue, setVolumeValue] = useState(0);
@@ -19,7 +22,7 @@ function Controls() {
 
       <div className="controls-content">
 
-        <audio src="../../song-data/song-files/battle-of-the-dragons.mp3"></audio>
+        <audio src={audioPath}></audio>
 
         <div className="controls-common">
           <div className="controls-info-wrap">

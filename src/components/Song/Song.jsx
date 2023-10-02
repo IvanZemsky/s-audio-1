@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 
 import { SongContext } from '../../context/song-context';
@@ -6,10 +6,21 @@ import './Song.scss';
 
 function Song({ songData }) {
 
-   const { setAudioPath } = useContext(SongContext);
+   const { audioPath, setAudioPath, togglePlayPause } = useContext(SongContext);
+
+   const songOnCoverStyles = {
+      display: 'flex',
+      backgroundColor: 'rgb(49, 49, 49, 0.8)',
+   }
+
+   const songAnimationStyles = (audioPath === songData.path) ? songOnCoverStyles : {display: 'none'};
 
    const setAudio = () => {
-      setAudioPath(songData.path);
+      if (audioPath !== songData.path) {
+         setAudioPath(songData.path);
+         return;
+      }
+      togglePlayPause();
    }
 
    return (
@@ -27,7 +38,7 @@ function Song({ songData }) {
                   </svg>
                )}
 
-               <div className='song-animation'>
+               <div className='song-animation' style={songAnimationStyles}>
                   <div></div>
                   <div></div>
                   <div></div>

@@ -1,16 +1,28 @@
-import { createContext, useState } from 'react'
-import { songList } from '../song-data/song-list'
+import { createContext, useState, useRef } from 'react'
 
 export const SongContext = createContext(null);
 
 export function SongContextValues(props) {
 
    const [audioPath, setAudioPath] = useState('');
+   const audio = useRef(null); // only for <audio> in Controls
+
+   const togglePlayPause = () => {
+      if (audio.current.paused) {
+         audio.current.play();
+      }
+      else {
+         audio.current.pause();
+      }
+   }
    
    const contextValues = {
-      audioPath, setAudioPath
+      audioPath, setAudioPath,
+      audio, togglePlayPause
    };
 
-   return <SongContext.Provider value={contextValues}>{props.children}</SongContext.Provider>
+   return <SongContext.Provider value={contextValues}>
+      {props.children}
+   </SongContext.Provider>
 
 }

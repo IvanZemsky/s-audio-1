@@ -1,6 +1,12 @@
 import dragonMp3 from './song-files/battle-of-the-dragons.mp3';
+import dragonMp3_2 from './song-files/battle-of-the-dragons-2.mp3';
+import dragonMp3_3 from './song-files/battle-of-the-dragons-3.mp3';
+import dragonMp3_4 from './song-files/battle-of-the-dragons-4.mp3';
+import dragonMp3_5 from './song-files/battle-of-the-dragons-5.mp3';
+import dragonMp3_6 from './song-files/battle-of-the-dragons-6.mp3';
 import happyMp3 from './song-files/happy-day-background.mp3';
 import upbeatMp3 from './song-files/UpbeatInspiration.mp3';
+import upbeatMp3_2 from './song-files/UpbeatInspiration-2.mp3';
 
 import dragonsCover from './song-covers/battle-dragons-cover.jpg';
 import happyCover from './song-covers/happy-day-cover.jpg';
@@ -40,7 +46,7 @@ export const songList = [
       singer: '17406877',
       duration: '3:57',
       lyrics: '',
-      path: dragonMp3,
+      path: dragonMp3_2,
       cover: ''
    },
    {
@@ -49,7 +55,7 @@ export const songList = [
       singer: 'Liborio Conti',
       duration: '3:46',
       lyrics: '',
-      path: upbeatMp3,
+      path: upbeatMp3_2,
       cover: ''
    },
    {
@@ -58,7 +64,7 @@ export const songList = [
       singer: '17406877',
       duration: '3:57',
       lyrics: '',
-      path: dragonMp3,
+      path: dragonMp3_3,
       cover: ''
    },
    {
@@ -67,7 +73,7 @@ export const songList = [
       singer: '17406877',
       duration: '3:57',
       lyrics: '',
-      path: dragonMp3,
+      path: dragonMp3_4,
       cover: dragonsCover
    },
    {
@@ -76,7 +82,7 @@ export const songList = [
       singer: '17406877',
       duration: '3:57',
       lyrics: '',
-      path: dragonMp3,
+      path: dragonMp3_5,
       cover: ''
    },
    {
@@ -85,7 +91,7 @@ export const songList = [
       singer: '17406877',
       duration: '3:57',
       lyrics: '',
-      path: dragonMp3,
+      path: dragonMp3_6,
       cover: ''
    },
    

@@ -1,13 +1,27 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useRef, useEffect } from 'react'
 import './Controls.scss';
 import { SongContext } from '../../context/song-context';
+import userEvent from '@testing-library/user-event';
 
 function Controls() {
 
-  const {audioPath} = useContext(SongContext);
+  const { audioPath, audio, togglePlayPause } = useContext(SongContext);
+  const timelineInput = useRef(null);
 
   const [timelineValue, setTimelineValue] = useState(0);
-  const [volumeValue, setVolumeValue] = useState(0);
+  const [volumeValue, setVolumeValue] = useState(100);
+
+  const controlsAppearanceStyle = (audioPath) ? {transform: 'translateY(0%)'} : null;
+
+  useEffect(() => {
+    if (audioPath) {
+      audio.current.load();
+
+      audio.current.addEventListener('canplaythrough', () => {
+        audio.current.play();
+      })
+    }
+  }, [audioPath]);
 
   const handleTimeline = (event) => {
     setTimelineValue(event.target.value);
@@ -15,14 +29,30 @@ function Controls() {
 
   const handleVolume = (event) => {
     setVolumeValue(event.target.value);
+    audio.current.volume = volumeValue / 100;
+  }
+
+  const updateTimelineAuto = (event) => {
+    if (audio.current.duration) {
+      setTimelineValue((audio.current.currentTime / audio.current.duration) * 100);
+    }
+  }
+
+  const handleClickTimeline = (event) => {
+    audio.current.currentTime = audio.current.duration * (timelineInput.current.value / 100);
   }
 
   return (
-    <section className="controls">
+    <section className="controls" style={controlsAppearanceStyle}>
 
       <div className="controls-content">
 
-        <audio src={audioPath}></audio>
+        <audio
+          src={audioPath}
+          ref={audio}
+          onTimeUpdate={updateTimelineAuto}
+        >
+        </audio>
 
         <div className="controls-common">
           <div className="controls-info-wrap">
@@ -41,7 +71,7 @@ function Controls() {
                 <path d="M1 0.5H0.5V1V34.75V35.25H1H4.75H5.25V34.75V1V0.5H4.75H1ZM6.71745 17.459L6.09341 17.875L6.71745 18.291L28.8476 33.0445L29.625 33.5628V32.6285V3.12155V2.18729L28.8477 2.70552L6.71745 17.459ZM14.6566 17.875L24.875 11.0628V24.6872L14.6566 17.875Z" fill="black" stroke="black" />
               </svg>
             </button>
-            <button id="playSong" type='button'>
+            <button id="playSong" type='button' onClick={togglePlayPause}>
               <svg className='controls-play' viewBox="0 0 39 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" clipRule="evenodd" d="M0 0V44L39 22L0 0Z" fill="black" />
               </svg>
@@ -63,7 +93,9 @@ function Controls() {
               min="0"
               max="100"
               value={timelineValue}
+              ref={timelineInput}
               onChange={handleTimeline}
+              onInput={handleClickTimeline}
             />
             <p className='controls-all-time'>3:01</p>
           </div>

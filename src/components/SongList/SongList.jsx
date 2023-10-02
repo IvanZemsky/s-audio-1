@@ -1,5 +1,4 @@
 import React from 'react';
-import { useContext } from 'react';
 
 import Song from '../Song/Song';
 import { songList } from '../../song-data/song-list.js';

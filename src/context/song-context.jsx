@@ -5,6 +5,7 @@ export const SongContext = createContext(null);
 export function SongContextValues(props) {
 
    const [audioPath, setAudioPath] = useState('');
+   const [timelineValue, setTimelineValue] = useState(0);
    const audio = useRef(null); // only for <audio> in Controls
 
    const togglePlayPause = () => {
@@ -18,6 +19,7 @@ export function SongContextValues(props) {
    
    const contextValues = {
       audioPath, setAudioPath,
+      timelineValue, setTimelineValue,
       audio, togglePlayPause
    };
 

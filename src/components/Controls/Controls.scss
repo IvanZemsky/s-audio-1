@@ -22,7 +22,7 @@
    height: 90px;
    padding: 23px 0;
    max-width: 1920px;
-   margin: 0 auto;
+   margin-right: auto;
 }
 
 .controls-common,
@@ -32,7 +32,8 @@
 }
 
 .controls-additional{
-   gap: 9.21%;
+   justify-content: space-between;
+   gap: 15px;
 }
 
 .controls-info-wrap{
@@ -87,20 +88,16 @@
 .controls-timeline{
    display: flex;
    align-items: center;
-   width: 53.24%;
+   width: 53.2%;
+   color: $main-grey;
+   font-size: 18px;
 
    p:nth-child(1){
       margin-right: 11px;
    }
 
-   .controls-current-time,
-   .controls-all-time{
-      color: $main-grey;
-      font-size: 18px;
-   }
-
    #songTimeline{
-      width: 83.85%;
+      flex: 1 1 83.85%;
       margin-right: 7px;
    }
 }
@@ -126,7 +123,7 @@
 .controls-volume{
    display: flex;
    align-items: center;
-   width: 25.38%;
+   flex: 0 1 25.84%;
    gap: 14px;
 
    #songVolume{

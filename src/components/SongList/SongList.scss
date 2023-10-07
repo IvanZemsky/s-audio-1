@@ -1,7 +1,9 @@
 @import '../../var.scss';
 
 .song-list{
-   padding: 90px 7.61% 0 2.34vw;
+   display: flex;
+   flex-direction: column;
+   padding: 90px 7.61% 0 0;
    overflow-y: hidden;
 
    .song-list_title{
@@ -14,9 +16,9 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      flex-grow: 1;
       gap: 22px;
-      max-height: calc(100vh - 140px);
-      padding: 0 12.5% 15px 0;
+      padding: 0 9px 15px 0;
       overflow-y: auto;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
@@ -28,10 +30,8 @@
 
       &::-webkit-scrollbar-thumb{
          width: 5px;
-         height: 95px;
          background-color: $main-grey;
       }
-
       
 
       /*
@@ -48,3 +48,4 @@
       */
    }
 }
+

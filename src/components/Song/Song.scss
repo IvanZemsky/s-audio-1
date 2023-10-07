@@ -4,20 +4,22 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   gap: 15px;
+   gap: 25px;
+   padding-right: 15px;
    cursor: pointer;
 
    .song-info{
       display: flex;
       align-items: center;
       gap: 18px;
+      overflow: hidden;
 
       .song-info_cover{
          position: relative;
          display: flex;
          justify-content: center;
          align-items: center;
-         flex: none;
+         flex-shrink: 0;
          width: 60px;
          height: 60px;
          background-color: #F0F0F0;
@@ -66,20 +68,31 @@
          }
          
          .song-cover_placeholder{
-            width: 26px;
-            height: 36px;
+            width: 43.33%;
+            height: 60%;
          }
 
       }
    }
 
+   .song-info_text{
+      overflow: auto;
+   }
+
    .song-name{
+      height: 20px;
       margin-bottom: 9px;
       font-weight: 500;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
    }
 
    .song-singer{
       color: $main-grey;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
    }
 
    .song-time-menu{

@@ -1,0 +1,21 @@
+@media (max-width: 1210px) {
+
+   .song-list{
+      padding-right: 10px;
+
+      .song-list_songs{
+         padding-right: 5%;
+      }
+   }
+
+   
+}
+
+@media (max-width: 1000px) {
+   
+   .song-list .song-list_songs{
+      gap: 15px;
+      padding-right: 10px;
+   }
+
+}

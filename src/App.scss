@@ -7,7 +7,7 @@
       grid-template-rows: 100vh;
       grid-template-columns: minmax(auto, 730px) 1fr;
 
-      margin: 0 auto 0 2.34vw;
+      margin: 0 auto 0 4.68vw;
    }
    
 }
@@ -16,5 +16,27 @@
    .song-list,
    .lyrics{
       padding-top: 50px;
+   }
+}
+
+@media (max-width: 1210px) {
+   .App .main-content{
+      grid-template-columns: 1fr auto;
+   }
+}
+
+@media (max-width: 500px) {
+   .App .main-content{
+      grid-template-columns: 1fr;
+   }
+}
+
+@media (max-width: 745px) {
+   .App .main-content{
+      display: flex;
+   }
+
+   .song-list, .lyrics{
+      height: 100vh;
    }
 }

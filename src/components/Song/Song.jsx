@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { useContext } from 'react';
+import React, { useState } from 'react'
+import { useContext } from 'react'
 
-import { SongContext } from '../../context/song-context';
-import './Song.scss';
+import { SongContext } from '../../context/song-context'
+import './Song.scss'
+import './Song-media.scss'
 
 function Song({ songData }) {
 
@@ -13,7 +14,7 @@ function Song({ songData }) {
       backgroundColor: 'rgb(49, 49, 49, 0.8)',
    }
 
-   const songAnimationStyles = (audioPath === songData.path) ? songOnCoverStyles : {display: 'none'};
+   const songAnimationStyles = (audioPath === songData.path) ? songOnCoverStyles : { display: 'none' };
 
    const setAudio = () => {
       if (audioPath !== songData.path) {

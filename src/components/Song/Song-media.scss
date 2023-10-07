@@ -1,0 +1,28 @@
+@media (max-width: 900px) {
+
+   .song {
+      font-size: 16px;
+
+      .song-info{
+         gap: 14px;
+
+         .song-info_cover {
+            width: 45px;
+            height: 45px;
+         }
+
+         .song-name{
+            margin-bottom: 5px;
+         }
+
+      }
+
+   }
+
+}
+
+@media (max-width: 745px) {
+   .song{
+      max-width: 600px;
+   }
+}

@@ -1,9 +1,15 @@
 import React from 'react';
 import './Lyrics.scss';
+import './Lyrics-media.scss';
+
+import arrowRightIcon from '../../assets/img/arrow-right.svg';
 
 function Lyrics() {
   return (
     <div className="lyrics">
+      <button id="lyrics-show" type='button'>
+        <img src={arrowRightIcon} alt="Show lyrics of song" />
+      </button>
       <p>    
         Lorem ipsum dolor sit amet<br/>
         Consectetur adipiscing elit.<br/>
@@ -23,8 +29,10 @@ function Lyrics() {
         Curabitur finibus felis viverra<br/>
         augue accumsan, ut molestie<br/>
         <br/>
-        leo gravida. Vivamus vitae sem eget elit porta<br/>
-        vulputate eget in metus. Ut hendrerit nibh tortor<br/>
+        leo gravida.<br />
+        Vivamus vitae sem eget elit porta<br/>
+        vulputate eget in metus.<br />
+        Ut hendrerit nibh tortor<br/>
         ut accumsan dolor rutrum ut<br/>
         <br/>
         Sed laoreet pulvinar urna, ac<br/>

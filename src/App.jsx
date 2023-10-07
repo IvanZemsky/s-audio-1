@@ -11,6 +11,7 @@ function App() {
       <main className="App">
         <div className="main-content">
           <SongList />
+            {/* write #lyrics-show here */}
           <Lyrics />
         </div>
         <Controls />

@@ -1,7 +1,11 @@
 @import '../../var.scss';
 
+#lyrics-show{
+   display: none;
+}
+
 .lyrics{
-   padding: 90px 15px 0 35px;
+   padding: 0 15px 0 35px;
    font-weight: 500;
    line-height: 1.1;
    transform-origin: top;
@@ -17,26 +21,23 @@
       width: 5px;
       background-color: $main-grey;
    }
-
-   #lyrics-show{
-      display: none;
-   }
    
    p{
       height: 100%;
       max-width: 382px;
-      padding-right: 10px;
+      padding: 90px 10px 0 0;
       font-size: 24px;
+      overflow-y: auto;
 
       &::-webkit-scrollbar{
          width: 5px;
-         background-color: rgbs(0,0,0,0);
+         background-color: rgba(0,0,0,0);
       }
 
       &::-webkit-scrollbar-thumb{
          width: 5px;
          height: 95px;
-         background-color: $main-grey;
+         background-color: #c2c2c2;
       }
    }
 }

@@ -19,3 +19,9 @@
    }
 
 }
+
+@media (max-width: 745px) {
+   .song-list{
+      padding-right: 55px; // 10px + .lyrics-show width
+   }
+}

@@ -1,36 +1,43 @@
-@media (max-width: 1210px){
-   
-   .lyrics p{
+@media (max-width: 1210px) {
+
+   .lyrics p {
       font-size: 20px;
    }
 
 }
 
-@media (max-width: 1000px){
-   
-   .lyrics p{
+@media (max-width: 1000px) {
+
+   .lyrics p {
       font-size: 15px;
    }
 
 }
 
 @media (max-width: 745px) {
-   .lyrics{
-     display: none;
-     padding: 0 15px 0 0;
 
-     #lyrics-show{
+   .lyrics {
+      position: fixed;
+      top: 0;
+      right: 0;
       display: flex;
-      width: 45px;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+      padding: 0 15px 0 0;
+      transform: translateX(calc(100% - 43.6px));
+      transition: transform 0.2s linear;
 
-      img{
-         width: 12px;
-         height: auto;
+      #lyrics-show {
+         display: flex;
+         width: 45px;
+         align-items: center;
+         justify-content: center;
+         margin-left: auto;
+         background-color: #F2F2F2;
+         cursor: pointer;
+   
+         img {
+            width: 12px;
+            height: auto;
+         }
       }
-
-     }
    }
 }

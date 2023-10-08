@@ -14,7 +14,7 @@
 
 @media (max-height: 1025px) {
    .song-list,
-   .lyrics{
+   .lyrics p{
       padding-top: 50px;
    }
 }
@@ -38,5 +38,14 @@
 
    .song-list, .lyrics{
       height: 100vh;
+   }
+
+   .song-list{
+      flex-grow: 1;
+   }
+
+   .song-list .song-list_songs::-webkit-scrollbar,
+   .song-list .song-list_songs::-webkit-scrollbar-thumb{
+      width: 2px;
    }
 }

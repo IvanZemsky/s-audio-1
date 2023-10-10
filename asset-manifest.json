@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/s-audio-1/static/css/main.53353a87.css",
-    "main.js": "/s-audio-1/static/js/main.18e129ad.js",
+    "main.css": "/s-audio-1/static/css/main.1891a1c3.css",
+    "main.js": "/s-audio-1/static/js/main.95a25cb2.js",
     "static/media/UpbeatInspiration-2.mp3": "/s-audio-1/static/media/UpbeatInspiration-2.0abaf0898cffbff8172d.mp3",
     "static/media/UpbeatInspiration.mp3": "/s-audio-1/static/media/UpbeatInspiration.0abaf0898cffbff8172d.mp3",
     "static/media/battle-of-the-dragons-2.mp3": "/s-audio-1/static/media/battle-of-the-dragons-2.8a3bddd4d5649503333e.mp3",
@@ -10,6 +10,7 @@
     "static/media/battle-of-the-dragons-5.mp3": "/s-audio-1/static/media/battle-of-the-dragons-5.8a3bddd4d5649503333e.mp3",
     "static/media/battle-of-the-dragons-6.mp3": "/s-audio-1/static/media/battle-of-the-dragons-6.8a3bddd4d5649503333e.mp3",
     "static/media/battle-of-the-dragons.mp3": "/s-audio-1/static/media/battle-of-the-dragons.8a3bddd4d5649503333e.mp3",
+    "static/media/happy-day-background-2.mp3": "/s-audio-1/static/media/happy-day-background-2.b231ac4b339c8547c9bd.mp3",
     "static/media/happy-day-background.mp3": "/s-audio-1/static/media/happy-day-background.b231ac4b339c8547c9bd.mp3",
     "static/media/Poppins-Regular.ttf": "/s-audio-1/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Medium.ttf": "/s-audio-1/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
@@ -19,11 +20,11 @@
     "static/media/battle-dragons-cover.jpg": "/s-audio-1/static/media/battle-dragons-cover.880c9c1fd18a38c1f298.jpg",
     "index.html": "/s-audio-1/index.html",
     "static/media/arrow-right.svg": "/s-audio-1/static/media/arrow-right.841ad35a544a9470b1b2d17f3eee9746.svg",
-    "main.53353a87.css.map": "/s-audio-1/static/css/main.53353a87.css.map",
-    "main.18e129ad.js.map": "/s-audio-1/static/js/main.18e129ad.js.map"
+    "main.1891a1c3.css.map": "/s-audio-1/static/css/main.1891a1c3.css.map",
+    "main.95a25cb2.js.map": "/s-audio-1/static/js/main.95a25cb2.js.map"
   },
   "entrypoints": [
-    "static/css/main.53353a87.css",
-    "static/js/main.18e129ad.js"
+    "static/css/main.1891a1c3.css",
+    "static/js/main.95a25cb2.js"
   ]
 }

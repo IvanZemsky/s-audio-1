@@ -9,9 +9,14 @@
          .song-info_cover {
             width: 45px;
             height: 45px;
+
+            .song-animation div{
+               width: 2px;
+            }
          }
 
          .song-name{
+            height: 18px;
             margin-bottom: 5px;
          }
 
@@ -19,4 +24,29 @@
 
    }
 
+}
+
+@media (max-width: 500px) {
+   .song{
+      gap: 15px;
+      padding-right: 7px;
+      font-size: 13px;
+
+      .song-info .song-name{
+         height: 15px;
+      }
+
+      .song-time_menu{
+         gap: 12px;
+      }
+
+      .song-menu{
+         gap: 3px;
+      }
+
+      .song-menu_circle{
+         width: 3px;
+         height: 3px;
+      }
+   }
 }

@@ -12,7 +12,7 @@ function ControlsAdditional() {
    const handleVolume = (event) => {
       setVolumeValue(event.target.value);
       audio.current.volume = volumeValue / 100;
-    }
+   }
 
    return (
       <div className="controls-additional">

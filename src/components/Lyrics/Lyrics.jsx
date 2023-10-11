@@ -7,21 +7,26 @@ import arrowRightIcon from '../../assets/img/arrow-right.svg';
 function Lyrics() {
 
   const lyricsRef = useRef(null);
+  const showBtnRef = useRef(null);
+  const arrowRef = useRef(null);
 
   const handleLyricsShow = () => {
     if (lyricsRef.current.style.transform !== 'translateX(0px)') {
       lyricsRef.current.style.transform = 'translateX(0px)';
+      arrowRef.current.style.transform = 'rotate(0deg)';
     }
     else {
-      lyricsRef.current.style.transform = 'translateX(calc(100% - 43.6px)';
+      lyricsRef.current.style.transform = `translateX(calc(100% - ${showBtnRef.current.offsetWidth}px))`;
+      arrowRef.current.style.transform = 'rotate(180deg)';
     }
   }
 
 
   return (
     <section className="lyrics" ref={lyricsRef}>
-      <button id="lyrics-show" type='button' onClick={handleLyricsShow}>
-        <img src={arrowRightIcon} alt="Show lyrics of song" />
+      <button id="lyrics-show" ref={showBtnRef} type='button' onClick={handleLyricsShow}>
+        <p>T</p>
+        <img src={arrowRightIcon} ref={arrowRef} alt="Show lyrics of song" />
       </button>
       <p>
         Lorem ipsum dolor sit amet<br />

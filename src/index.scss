@@ -27,6 +27,11 @@
   box-sizing: border-box;
 }
 
+html, body{
+  height: 100%;
+  overflow: hidden; // check !!!
+}
+
 body{
   font-family: 'Poppins';
   font-weight: 400;
@@ -48,6 +53,7 @@ ul,ol,li{
 
 button, input{
   border: none;
+  line-height: 1;
   box-shadow: none;
   text-shadow: none;
   outline: none;

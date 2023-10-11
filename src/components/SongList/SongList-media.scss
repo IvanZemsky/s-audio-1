@@ -25,3 +25,20 @@
       padding-right: 55px; // 10px + .lyrics-show width
    }
 }
+
+@media (max-width: 500px) {
+   .song-list .song-list_title{
+      margin-bottom: 20px;
+      font-size: 30px;
+   }
+
+   .song-list .song-list_songs{
+      padding-right: 5px;
+   }
+}
+
+@media (max-width: 400px) {
+   .song-list{
+      padding-right: 38px;
+   }
+}

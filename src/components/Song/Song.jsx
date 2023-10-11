@@ -53,7 +53,7 @@ function Song({ songData }) {
             </div>
          </div>
 
-         <div className="song-time-menu">
+         <div className="song-time_menu">
             <p className='song-time'>{songData.duration}</p>
             <button type='button' className="song-menu">
                <div className="song-menu_circle"></div>

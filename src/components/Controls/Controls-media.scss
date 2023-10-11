@@ -1,10 +1,51 @@
 @media (max-width: 1300px) {
 
+   .controls-content{
+      display: flex;
+      gap: 35px;
+   }
+
+   .controls-common{
+      flex: 1 1 auto;
+   }
+
+   .controls-info-wrap{
+      margin-right: 7%;
+
+      .controls-info{
+         font-size: 25px;
+      }
+   }
+
+   #copySongInfo{
+      margin-right: 6%; // of .controls-common
+   
+      .controls-copy{
+         width: 24px;
+      }
+   }
+
+   .controls-buttons{
+      
+      gap: 20px;
+
+      .controls-play{
+         width: 29px;
+      }
+      
+      .controls-previous,
+      .controls-next{
+         width: 20px;
+      }
+   }
+
    .controls-additional{
-      gap: 10%;
+      flex: 1 1 auto;
+      gap: 15%;
    }
 
    .controls-volume{
+      max-width: 180px;
       flex: 1 1 auto;
    }
 
@@ -31,4 +72,18 @@
       width: 100%;
    }
 
+   #repeatSong {
+      margin-left: auto;
+
+      .controls-repeat{
+         width: 30px;
+      }
+   }
+
+}
+
+@media (max-width: 768px) {
+   .controls-volume{
+      display: none;
+   }
 }

@@ -1,6 +1,14 @@
+@import '../../_var.scss';
+
+@media (max-height: 1025px) {
+   .lyrics p::-webkit-scrollbar-thumb{
+      box-shadow: 0 50px 0 0 #F2F2F2 inset; // for hiding top of scroll
+   }
+}
+
 @media (max-width: 1210px) {
 
-   .lyrics p {
+   .lyrics > p {
       font-size: 20px;
    }
 
@@ -8,7 +16,7 @@
 
 @media (max-width: 1000px) {
 
-   .lyrics p {
+   .lyrics > p {
       font-size: 15px;
    }
 
@@ -27,17 +35,35 @@
 
       #lyrics-show {
          display: flex;
+         flex-direction: column;
+         gap: 10px;
          width: 45px;
          align-items: center;
          justify-content: center;
          margin-left: auto;
+         font-family: 'Poppins';
+         font-size: 23px;
+         color: $main-grey;
          background-color: #F2F2F2;
+         user-select: none;
          cursor: pointer;
    
          img {
             width: 12px;
             height: auto;
+            transform: rotate(180deg); // gets changed in js
          }
       }
    }
+}
+
+@media (max-width: 400px) {
+   .lyrics{
+      transform: translateX(calc(100% - 30px));
+
+      #lyrics-show{
+         width: 30px;
+      }
+   }
+
 }

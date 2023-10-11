@@ -9,7 +9,7 @@
    background-color: #DCDCDC;
    transform: translateY(106%);
    transition: transform .2s linear;
-   z-index: 150;
+   z-index: 200;
 }
 
 .controls-content{
@@ -37,8 +37,10 @@
 }
 
 .controls-info-wrap{
+   display: flex;
+   align-items: center;
    height: 36px;
-   margin-right: 65px;
+   margin-right: 9.88%; // of .controls-common
    overflow: hidden;
 
    .controls-info{
@@ -49,18 +51,19 @@
 }
 
 #copySongInfo{
-   margin-right: 65px;
+   margin-right: 9.88%; // of .controls-common
    cursor: pointer;
 
    .controls-copy{
       width: 30px;
-      height: 32px;
+      height: auto;
    }
 }
 
 .controls-buttons{
    display: flex;
    justify-content: space-between;
+   align-items: center;
    gap: 49px;
    width: 29.01%;
    max-width: 310px;
@@ -71,13 +74,13 @@
 
    .controls-play{
       width: 39px;
-      height: 44px;
+      height: auto;
    }
    
    .controls-previous,
    .controls-next{
       width: 31px;
-      height: 36px;
+      height: auto;
    }
    
    .controls-next{
@@ -142,6 +145,6 @@
 
    .controls-repeat{
       width: 39px;
-      height: 39px;
+      height: auto;
    }
 }

@@ -1,16 +1,13 @@
 @import '../../var.scss';
 
-#lyrics-show{
-   display: none;
-}
-
 .lyrics{
+   position: relative;
    padding: 0 15px 0 35px;
    font-weight: 500;
    line-height: 1.1;
-   transform-origin: top;
    background-color: #F2F2F2;
    overflow-y: auto;
+   z-index: 150;
 
    &::-webkit-scrollbar{
       width: 5px;
@@ -21,8 +18,12 @@
       width: 5px;
       background-color: $main-grey;
    }
+
+   #lyrics-show{
+      display: none;
+   }
    
-   p{
+   & > p{
       height: 100%;
       max-width: 382px;
       padding: 90px 10px 0 0;
@@ -36,8 +37,8 @@
 
       &::-webkit-scrollbar-thumb{
          width: 5px;
-         height: 95px;
          background-color: #c2c2c2;
+         box-shadow: 0 90px 0 0 #F2F2F2 inset; // for hiding top of scroll
       }
    }
 }

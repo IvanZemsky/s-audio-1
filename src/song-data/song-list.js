@@ -5,6 +5,7 @@ import dragonMp3_4 from './song-files/battle-of-the-dragons-4.mp3';
 import dragonMp3_5 from './song-files/battle-of-the-dragons-5.mp3';
 import dragonMp3_6 from './song-files/battle-of-the-dragons-6.mp3';
 import happyMp3 from './song-files/happy-day-background.mp3';
+import happyMp3_2 from './song-files/happy-day-background-2.mp3';
 import upbeatMp3 from './song-files/UpbeatInspiration.mp3';
 import upbeatMp3_2 from './song-files/UpbeatInspiration-2.mp3';
 
@@ -92,6 +93,15 @@ export const songList = [
       duration: '3:57',
       lyrics: '',
       path: dragonMp3_6,
+      cover: ''
+   },
+   {
+      id: 10,
+      name: 'Happy Day (Background, Vlog Music) 2',
+      singer: 'Top-Flow-Production',
+      duration: '1:48',
+      lyrics: '',
+      path: happyMp3_2,
       cover: ''
    },
    

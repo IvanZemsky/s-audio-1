@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/s-audio-1/static/css/main.1891a1c3.css",
+    "main.css": "/s-audio-1/static/css/main.10eabd77.css",
     "main.js": "/s-audio-1/static/js/main.95a25cb2.js",
     "static/media/UpbeatInspiration-2.mp3": "/s-audio-1/static/media/UpbeatInspiration-2.0abaf0898cffbff8172d.mp3",
     "static/media/UpbeatInspiration.mp3": "/s-audio-1/static/media/UpbeatInspiration.0abaf0898cffbff8172d.mp3",
@@ -20,11 +20,11 @@
     "static/media/battle-dragons-cover.jpg": "/s-audio-1/static/media/battle-dragons-cover.880c9c1fd18a38c1f298.jpg",
     "index.html": "/s-audio-1/index.html",
     "static/media/arrow-right.svg": "/s-audio-1/static/media/arrow-right.841ad35a544a9470b1b2d17f3eee9746.svg",
-    "main.1891a1c3.css.map": "/s-audio-1/static/css/main.1891a1c3.css.map",
+    "main.10eabd77.css.map": "/s-audio-1/static/css/main.10eabd77.css.map",
     "main.95a25cb2.js.map": "/s-audio-1/static/js/main.95a25cb2.js.map"
   },
   "entrypoints": [
-    "static/css/main.1891a1c3.css",
+    "static/css/main.10eabd77.css",
     "static/js/main.95a25cb2.js"
   ]
 }

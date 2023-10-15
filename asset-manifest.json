@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/s-audio-1/static/css/main.7945d243.css",
-    "main.js": "/s-audio-1/static/js/main.793528ad.js",
+    "main.css": "/s-audio-1/static/css/main.595c5da8.css",
+    "main.js": "/s-audio-1/static/js/main.0c7f5303.js",
     "static/media/UpbeatInspiration-2.mp3": "/s-audio-1/static/media/UpbeatInspiration-2.0abaf0898cffbff8172d.mp3",
     "static/media/UpbeatInspiration.mp3": "/s-audio-1/static/media/UpbeatInspiration.0abaf0898cffbff8172d.mp3",
     "static/media/battle-of-the-dragons-2.mp3": "/s-audio-1/static/media/battle-of-the-dragons-2.8a3bddd4d5649503333e.mp3",
@@ -23,11 +23,11 @@
     "static/media/pause.svg": "/s-audio-1/static/media/pause.44fde7ae67df5ee23c245150f2b5f05f.svg",
     "static/media/arrow-right.svg": "/s-audio-1/static/media/arrow-right.841ad35a544a9470b1b2d17f3eee9746.svg",
     "static/media/play.svg": "/s-audio-1/static/media/play.e49b6eda6490c75143fe00edfb471489.svg",
-    "main.7945d243.css.map": "/s-audio-1/static/css/main.7945d243.css.map",
-    "main.793528ad.js.map": "/s-audio-1/static/js/main.793528ad.js.map"
+    "main.595c5da8.css.map": "/s-audio-1/static/css/main.595c5da8.css.map",
+    "main.0c7f5303.js.map": "/s-audio-1/static/js/main.0c7f5303.js.map"
   },
   "entrypoints": [
-    "static/css/main.7945d243.css",
-    "static/js/main.793528ad.js"
+    "static/css/main.595c5da8.css",
+    "static/js/main.0c7f5303.js"
   ]
 }

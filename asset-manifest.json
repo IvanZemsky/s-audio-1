@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/s-audio-1/static/css/main.595c5da8.css",
-    "main.js": "/s-audio-1/static/js/main.0c7f5303.js",
+    "main.css": "/s-audio-1/static/css/main.0a45307c.css",
+    "main.js": "/s-audio-1/static/js/main.6f5dd0e5.js",
     "static/media/UpbeatInspiration-2.mp3": "/s-audio-1/static/media/UpbeatInspiration-2.0abaf0898cffbff8172d.mp3",
     "static/media/UpbeatInspiration.mp3": "/s-audio-1/static/media/UpbeatInspiration.0abaf0898cffbff8172d.mp3",
     "static/media/battle-of-the-dragons-2.mp3": "/s-audio-1/static/media/battle-of-the-dragons-2.8a3bddd4d5649503333e.mp3",
@@ -19,15 +19,16 @@
     "static/media/upbeat-inspiration-cover.jpg": "/s-audio-1/static/media/upbeat-inspiration-cover.f82bb9e8ad989753ac87.jpg",
     "static/media/battle-dragons-cover.jpg": "/s-audio-1/static/media/battle-dragons-cover.880c9c1fd18a38c1f298.jpg",
     "static/media/copy.svg": "/s-audio-1/static/media/copy.cba885c66c6f5e8e591eda90bb536106.svg",
+    "static/media/next-prev.svg": "/s-audio-1/static/media/next-prev.2efd16898be1b09028d15f30b61356b8.svg",
     "index.html": "/s-audio-1/index.html",
     "static/media/pause.svg": "/s-audio-1/static/media/pause.44fde7ae67df5ee23c245150f2b5f05f.svg",
     "static/media/arrow-right.svg": "/s-audio-1/static/media/arrow-right.841ad35a544a9470b1b2d17f3eee9746.svg",
     "static/media/play.svg": "/s-audio-1/static/media/play.e49b6eda6490c75143fe00edfb471489.svg",
-    "main.595c5da8.css.map": "/s-audio-1/static/css/main.595c5da8.css.map",
-    "main.0c7f5303.js.map": "/s-audio-1/static/js/main.0c7f5303.js.map"
+    "main.0a45307c.css.map": "/s-audio-1/static/css/main.0a45307c.css.map",
+    "main.6f5dd0e5.js.map": "/s-audio-1/static/js/main.6f5dd0e5.js.map"
   },
   "entrypoints": [
-    "static/css/main.595c5da8.css",
-    "static/js/main.0c7f5303.js"
+    "static/css/main.0a45307c.css",
+    "static/js/main.6f5dd0e5.js"
   ]
 }

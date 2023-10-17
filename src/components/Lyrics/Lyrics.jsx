@@ -1,25 +1,42 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import './Lyrics.scss';
 import './Lyrics-media.scss';
+import { SongContext } from '../../context/song-context';
 
 import arrowRightIcon from '../../assets/img/arrow-right.svg';
 
 function Lyrics() {
+
+  const { lyricsTextRef } = useContext(SongContext);
 
   const lyricsRef = useRef(null);
   const showBtnRef = useRef(null);
   const arrowRef = useRef(null);
 
   const handleLyricsShow = () => {
+    const lyricsTransformProperty = `translateX(calc(100% - ${showBtnRef.current.offsetWidth}px))`;
+
     if (lyricsRef.current.style.transform !== 'translateX(0px)') {
       lyricsRef.current.style.transform = 'translateX(0px)';
       arrowRef.current.style.transform = 'rotate(0deg)';
     }
     else {
-      lyricsRef.current.style.transform = `translateX(calc(100% - ${showBtnRef.current.offsetWidth}px))`;
+      lyricsRef.current.style.transform = lyricsTransformProperty;
       arrowRef.current.style.transform = 'rotate(180deg)';
     }
   }
+
+  useEffect(() => {
+    const handleResize = () => {
+      const lyricsTransformProperty = `translateX(calc(100% - ${showBtnRef.current.offsetWidth}px))`;
+
+      lyricsRef.current.style.transform = (window.innerWidth <= 745) ? lyricsTransformProperty : 'translateX(0px)';
+      arrowRef.current.style.transform = 'rotate(180deg)';
+    }
+
+    window.addEventListener('resize', handleResize);
+
+  }, []);
 
 
   return (
@@ -28,7 +45,7 @@ function Lyrics() {
         <p>T</p>
         <img src={arrowRightIcon} ref={arrowRef} alt="Show lyrics of song" />
       </button>
-      <p>
+      <p ref={lyricsTextRef}>
         Lorem ipsum dolor sit amet<br />
         Consectetur adipiscing elit.<br />
         Morbi orci mi<br />

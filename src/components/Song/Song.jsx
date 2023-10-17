@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { useContext } from 'react'
 
 import { SongContext } from '../../context/song-context'
 import './Song.scss'
 import './Song-media.scss'
 
-function Song({ songData }) {
+function Song({ songData, songsRef }) {
 
-   const { audioPath, setAudioPath, togglePlayPause } = useContext(SongContext);
+   const { controlsRef, lyricsTextRef, audioPath,
+         setAudioPath, togglePlayPause, setCurrentAudioData } = useContext(SongContext);
 
    const songOnCoverStyles = {
       display: 'flex',
@@ -17,8 +18,14 @@ function Song({ songData }) {
    const songAnimationStyles = (audioPath === songData.path) ? songOnCoverStyles : { display: 'none' };
 
    const setAudio = () => {
+      if (!audioPath) {
+         console.log(111);
+         songsRef.current.style.paddingBottom = `${15 + controlsRef.current.offsetHeight}px`;
+         lyricsTextRef.current.style.paddingBottom = `${15 + controlsRef.current.offsetHeight}px`;
+      }
       if (audioPath !== songData.path) {
          setAudioPath(songData.path);
+         setCurrentAudioData(songData);
          return;
       }
       togglePlayPause();

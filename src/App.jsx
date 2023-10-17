@@ -14,7 +14,7 @@ function App() {
           <SongList />
           <Lyrics />
         </div>
-        <Controls />
+        <Controls/>
       </main>
     </SongContextValues>
   );

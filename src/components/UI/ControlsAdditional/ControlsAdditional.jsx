@@ -1,25 +1,47 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import TimelineInput from '../TimelineInput.jsx/TimelineInput';
 import { SongContext } from '../../../context/song-context';
 
 function ControlsAdditional() {
 
-   const {audio} = useContext(SongContext);
+   const {audio, audioPath, setIsAudioPaused} = useContext(SongContext);
+   const audioElement = audio.current;
 
    const browserWidth = window.innerWidth;
    const [volumeValue, setVolumeValue] = useState(100);
 
    const handleVolume = (event) => {
       setVolumeValue(event.target.value);
-      audio.current.volume = volumeValue / 100;
+      audioElement.volume = volumeValue / 100;
+   }
+
+   const getTimeFormat = (seconds) => {
+      if (!seconds) return '0:00';
+      const formattedMinutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+
+      const formattedSeconds = remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
+      const formattedTime = `${formattedMinutes}:${formattedSeconds}`;
+
+      return formattedTime;
+   }
+
+   const setAudioCurrentTime = () => {
+      let audioCurrentSeconds = Math.floor(audioElement.currentTime);
+      return getTimeFormat(audioCurrentSeconds);
    }
 
    return (
       <div className="controls-additional">
          <div className="controls-timeline">
-            <p className='controls-current-time'>0:00</p>
+            <p className='controls-current-time'>
+               {audioPath ? setAudioCurrentTime() : '0:00'}
+            </p>
             {browserWidth > 1300 ? <TimelineInput/> : null}
-            <p className='controls-all-time'>3:01</p>
+            <p className='controls-all-time'>
+               {/*currentAudioData ? currentAudioData.duration : '0:00'*/}
+               {audioPath ? getTimeFormat(audioElement.duration) : '0:00'}
+            </p>
          </div>
 
          <div className="controls-volume">

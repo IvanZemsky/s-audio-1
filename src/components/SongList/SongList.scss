@@ -13,6 +13,7 @@
    }
 
    .song-list_songs{
+      min-height: 1px; // ?????
       position: relative;
       display: flex;
       flex-direction: column;

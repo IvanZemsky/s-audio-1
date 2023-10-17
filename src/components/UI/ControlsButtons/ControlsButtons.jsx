@@ -1,26 +1,60 @@
-import React, { useContext } from 'react'
-import { SongContext } from '../../../context/song-context'
+import React, { useContext, useEffect, useState } from 'react'
+import pauseIcon from '../../../assets/img/pause.svg';
+import playIcon from '../../../assets/img/play.svg';
+import { SongContext } from '../../../context/song-context';
+import nextPrevTrackIcon from '../../../assets/img/next-prev.svg'
+import { songList } from '../../../song-data/song-list'
 
 function ControlsButtons() {
 
-   const { togglePlayPause } = useContext(SongContext);
+   const { audio, audioPath, setAudioPath, togglePlayPause, isAudioPaused, setIsAudioPaused } = useContext(SongContext);
+   const currentTrack = songList.find(track => track.path === audioPath);
+
+   const [playPauseIcon, setPlayPauseIcon] = useState(pauseIcon);
+
+   useEffect(() => {
+      const handlePlay = () => setPlayPauseIcon(pauseIcon);
+      const handlePause = () => setPlayPauseIcon(playIcon);
+  
+      audio.current.addEventListener('play', handlePlay);
+      audio.current.addEventListener('pause', handlePause);
+  
+      return () => {
+        audio.current.removeEventListener('play', handlePlay);
+        audio.current.removeEventListener('pause', handlePause);
+      };
+    }, [audio]);
+
+   const handlePreviousClick = () => {
+      if (songList.indexOf(currentTrack) === 0) {
+         setAudioPath(songList.at(-1).path); // play last track
+      }
+      else {
+         const previousTrack = songList[songList.indexOf(currentTrack) - 1];
+         setAudioPath(previousTrack.path);
+      }
+   }
+
+   const handleNextClick = () => {
+      if (songList.indexOf(currentTrack) === songList.length - 1) {
+         setAudioPath(songList[0].path); // play first track
+      }
+      else {
+         const nextTrack = songList[songList.indexOf(currentTrack) + 1];
+         setAudioPath(nextTrack.path);
+      }
+   }
 
    return (
       <div className="controls-buttons">
-         <button id="previousSong" type='button'>
-            <svg className='controls-previous' viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path d="M1 0.5H0.5V1V34.75V35.25H1H4.75H5.25V34.75V1V0.5H4.75H1ZM6.71745 17.459L6.09341 17.875L6.71745 18.291L28.8476 33.0445L29.625 33.5628V32.6285V3.12155V2.18729L28.8477 2.70552L6.71745 17.459ZM14.6566 17.875L24.875 11.0628V24.6872L14.6566 17.875Z" fill="black" stroke="black" />
-            </svg>
+         <button id="previousSong" type='button' onClick={handlePreviousClick}>
+            <img src={nextPrevTrackIcon} className='controls-previous' alt="Play previous track" />
          </button>
          <button id="playSong" type='button' onClick={togglePlayPause}>
-            <svg className='controls-play' viewBox="0 0 39 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path fillRule="evenodd" clipRule="evenodd" d="M0 0V44L39 22L0 0Z" fill="black" />
-            </svg>
+            <img src={playPauseIcon} className="controls-pause" alt="Pause track" />
          </button>
-         <button id="nextSong" type='button'>
-            <svg className='controls-next' viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path d="M1 0.5H0.5V1V34.75V35.25H1H4.75H5.25V34.75V1V0.5H4.75H1ZM6.71745 17.459L6.09341 17.875L6.71745 18.291L28.8476 33.0445L29.625 33.5628V32.6285V3.12155V2.18729L28.8477 2.70552L6.71745 17.459ZM14.6566 17.875L24.875 11.0628V24.6872L14.6566 17.875Z" fill="black" stroke="black" />
-            </svg>
+         <button id="nextSong" type='button' onClick={handleNextClick}>
+            <img src={nextPrevTrackIcon} className='controls-next' alt="Play next track" />
          </button>
       </div>
    )

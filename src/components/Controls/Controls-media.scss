@@ -13,24 +13,25 @@
       margin-right: 7%;
 
       .controls-info{
-         font-size: 25px;
+         height: 26px;
+         font-size: 22px;
       }
    }
 
    #copySongInfo{
       margin-right: 6%; // of .controls-common
    
-      .controls-copy{
+      .img{
          width: 24px;
       }
    }
 
    .controls-buttons{
-      
-      gap: 20px;
+      width: auto;
+      gap: 30px;
 
-      .controls-play{
-         width: 29px;
+      .controls-pause{
+         width: 23px;
       }
       
       .controls-previous,

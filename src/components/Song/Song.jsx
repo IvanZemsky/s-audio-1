@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { useContext } from 'react'
+import React, { useEffect, useContext, useRef } from 'react';
 
 import { SongContext } from '../../context/song-context'
 import './Song.scss'
@@ -7,8 +6,8 @@ import './Song-media.scss'
 
 function Song({ songData, songsRef }) {
 
-   const { controlsRef, lyricsTextRef, audioPath,
-         setAudioPath, togglePlayPause, setCurrentAudioData } = useContext(SongContext);
+   const { audio, songArray, controlsRef, lyricsTextRef, audioPath,
+      setAudioPath, togglePlayPause, setCurrentAudioData } = useContext(SongContext);
 
    const songOnCoverStyles = {
       display: 'flex',
@@ -17,19 +16,54 @@ function Song({ songData, songsRef }) {
 
    const songAnimationStyles = (audioPath === songData.path) ? songOnCoverStyles : { display: 'none' };
 
+   const animationBlocks = useRef([]);
+   const setRef = (index) => (element) => {
+      animationBlocks.current[index] = element;
+   };
+
    const setAudio = () => {
-      if (!audioPath) {
-         console.log(111);
-         songsRef.current.style.paddingBottom = `${15 + controlsRef.current.offsetHeight}px`;
-         lyricsTextRef.current.style.paddingBottom = `${15 + controlsRef.current.offsetHeight}px`;
-      }
+      songsRef.current.style.paddingBottom = `${15 + controlsRef.current.offsetHeight}px`;
       if (audioPath !== songData.path) {
          setAudioPath(songData.path);
          setCurrentAudioData(songData);
          return;
       }
+      if (lyricsTextRef.current) {
+         lyricsTextRef.current.style.paddingBottom = `${15 + controlsRef.current.offsetHeight}px`;
+      }
       togglePlayPause();
    }
+
+   const openMenu = (event) => {
+      event.stopPropagation();
+   }
+
+   useEffect(() => {
+      if (audioPath) {
+         setCurrentAudioData(songArray.find(songData => songData.path === audioPath));
+      }
+   }, [audioPath]);
+
+   useEffect(() => {
+      const handlePlay = () => {
+         animationBlocks.current.forEach((block, index) => {
+            block.style.animation = `music-${index+1} .8s linear infinite alternate`;
+         });
+      }
+      const handlePause = () => {
+         animationBlocks.current.forEach((block, index) => {
+            block.style.animationPlayState = 'paused';
+         });
+      }
+  
+      audio.current.addEventListener('play', handlePlay);
+      audio.current.addEventListener('pause', handlePause);
+  
+      return () => {
+        audio.current.removeEventListener('play', handlePlay);
+        audio.current.removeEventListener('pause', handlePause);
+      };
+    }, [audio]);
 
    return (
       <li className='song' onClick={setAudio}>
@@ -47,10 +81,10 @@ function Song({ songData, songsRef }) {
                )}
 
                <div className='song-animation' style={songAnimationStyles}>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
+                  <div ref={setRef(0)}></div>
+                  <div ref={setRef(1)}></div>
+                  <div ref={setRef(2)}></div>
+                  <div ref={setRef(3)}></div>
                </div>
 
             </div>
@@ -62,7 +96,7 @@ function Song({ songData, songsRef }) {
 
          <div className="song-time_menu">
             <p className='song-time'>{songData.duration}</p>
-            <button type='button' className="song-menu">
+            <button type='button' className="song-menu" onClick={openMenu}>
                <div className="song-menu_circle"></div>
                <div className="song-menu_circle"></div>
                <div className="song-menu_circle"></div>

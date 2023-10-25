@@ -5,6 +5,10 @@ import Lyrics from './components/Lyrics/Lyrics'
 import { SongContextValues } from './context/song-context'
 import './App.scss'
 import './App-media.scss'
+import { useState } from 'react'
+import { songList } from './song-data/song-list'
+
+//const [songArray, setSongArray] = useState(songList);
 
 function App() {
   return (

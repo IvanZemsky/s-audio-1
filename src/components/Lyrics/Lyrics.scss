@@ -1,6 +1,7 @@
 @import '../../var.scss';
 
 .lyrics{
+   min-width: 405px;
    position: relative;
    padding: 0 15px 0 35px;
    font-weight: 500;
@@ -8,6 +9,13 @@
    background-color: #F2F2F2;
    overflow-y: auto;
    z-index: 150;
+
+   &:has(.lyrics-icon_wrap) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 25px;
+   }
 
    &::-webkit-scrollbar{
       width: 5px;
@@ -40,5 +48,17 @@
          background-color: #c2c2c2;
          box-shadow: 0 90px 0 0 #F2F2F2 inset; // for hiding top of scroll
       }
+   }
+}
+
+.lyrics-icon_wrap{
+   max-width: 382px;
+   img{
+      display: block;
+      width: 115px;
+      margin: 0 auto 25px auto;
+   }
+   p{
+      text-align: center;
    }
 }

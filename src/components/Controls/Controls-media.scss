@@ -5,25 +5,22 @@
       gap: 35px;
    }
 
-   .controls-common{
-      flex: 1 1 auto;
+   .controls-common,
+   .controls-additional{
+      flex-shrink: 1;
    }
 
    .controls-info-wrap{
+      width: 65%;
+      flex-shrink: 1;
       margin-right: 7%;
 
-      .controls-info{
-         height: 26px;
-         font-size: 22px;
-      }
    }
 
-   #copySongInfo{
+   #openSongInfo{
+      width: 35px;
+      height: 35px;
       margin-right: 6%; // of .controls-common
-   
-      .img{
-         width: 24px;
-      }
    }
 
    .controls-buttons{
@@ -42,7 +39,7 @@
 
    .controls-additional{
       flex: 1 1 auto;
-      gap: 15%;
+      gap: 12%;
    }
 
    .controls-volume{

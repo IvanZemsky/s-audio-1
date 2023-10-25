@@ -19,7 +19,37 @@ export const songList = [
       name: 'Battle of the Dragons',
       singer: '17406877',
       duration: '3:57',
-      lyrics: '',
+      lyrics: `Lorem ipsum dolor sit amet
+         Consectetur adipiscing elit.
+         Morbi orci mi
+         scelerisque et
+         
+         aliquet at,
+         fermentum et erat
+         Proin consectetur egestas sem
+         consequat pellentesque
+         
+         Nam id scelerisque dolor
+         eget venenatis est
+         
+         Sed vitae rhoncus nulla
+         sit amet porttitor magna.
+         Curabitur finibus felis viverra
+         augue accumsan, ut molestie
+         
+         leo gravida.
+         Vivamus vitae sem eget elit porta
+         vulputate eget in metus.
+         Ut hendrerit nibh tortor
+         ut accumsan dolor rutrum ut
+         
+         Sed laoreet pulvinar urna, ac
+         convallis velit euismod posuere
+         Donec hendrerit erat ut maximus
+         dictum. Duis sit amet ultrices
+         quam
+         
+         Nam non tellus`,
       path: dragonMp3,
       cover: dragonsCover
    },
@@ -28,7 +58,7 @@ export const songList = [
       name: 'Happy Day (Background, Vlog Music)',
       singer: 'Top-Flow-Production',
       duration: '1:48',
-      lyrics: '',
+      lyrics: ``,
       path: happyMp3,
       cover: happyCover
    },

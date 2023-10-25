@@ -1,14 +1,15 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 
 import Song from '../Song/Song';
 import { songList } from '../../song-data/song-list.js';
 import './SongList.scss';
 import './SongList-media.scss';
+import { SongContext } from '../../context/song-context';
 
 function SongList() {
 
   const songsRef = useRef(null);
-  const [songArray, setSongArray] = useState(songList);
+  const {songArray} = useContext(SongContext);
 
   return (
     <section className="song-list">

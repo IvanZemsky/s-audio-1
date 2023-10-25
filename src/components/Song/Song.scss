@@ -47,24 +47,94 @@
             z-index: 50;
 
             & div{
+               will-change: height;
                width: 3px;
                flex-shrink: 0;
                background-color: #fff;
-               transition: height 1s linear;
+               transition: height 1.6s linear;
             }
 
             div:nth-child(1){
+               will-change: height;
                height: 75%;
+               animation: music-1 .8s linear infinite alternate;
+
+               @keyframes music-1 {
+                  0%{
+                     height: 75%;
+                  }
+                  33%{
+                     height: 45%;
+                  }
+                  66%{
+                     height: 100%;
+                  }
+                  100%{
+                     height: 75%;
+                  }
+               }
             }
             div:nth-child(2){
+               will-change: height;
                height: 60%;
+               animation: music-2 .8s linear infinite  alternate;
+
+               @keyframes music-2 {
+                  0%{
+                     height: 60%;
+                  }
+                  33%{
+                     height: 100%;
+                  }
+                  66%{
+                     height: 55%;
+                  }
+                  100%{
+                     height: 60%;
+                  }
+               }
             }
             div:nth-child(3){
+               will-change: height;
                height: 85%;
+               animation: music-3 .8s linear infinite alternate;
+
+               @keyframes music-3 {
+                  0%{
+                     height: 85%;
+                  }
+                  33%{
+                     height: 95%;
+                  }
+                  66%{
+                     height: 100%;
+                  }
+                  100%{
+                     height: 85%;
+                  }
+               }
             }
             div:nth-child(4){
-               height: 65%;
+               will-change: height;
+               height: 95%;
+               animation: music-4 .8s linear infinite alternate;
+
+               @keyframes music-4 {
+                  0%{
+                     height: 95%;
+                  }
+                  33%{
+                     height: 40%;
+                  }
+                  66%{
+                     height: 80%;
+                  }
+                  100%{
+                     height: 95%;
+                  }
+               }
             }
+            
          }
          
          .song-cover_placeholder{
@@ -106,6 +176,7 @@
    }
 
    .song-menu{
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -118,6 +189,32 @@
          height: 6px;
          border-radius: 50%;
          background-color: $main-grey;
+      }
+
+      &:active::before{
+         content: '';
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         display: block;
+         width: 0px;
+         height: 0px;
+         border-radius: 50%;
+         background-color: grey;
+         transform-origin: center center;
+         transform: translateX(-50%) translateY(-50%);
+         opacity: .3;
+         transition: .1s;
+         animation: a12 .1s linear forwards;
+         z-index: 50;
+      }
+
+      @keyframes a12 {
+         to {
+            width: 50px;
+            height: 50px;
+            opacity: 0;
+         }
       }
    }
 }

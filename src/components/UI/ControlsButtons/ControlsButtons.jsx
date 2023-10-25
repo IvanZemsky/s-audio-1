@@ -7,7 +7,7 @@ import { songList } from '../../../song-data/song-list'
 
 function ControlsButtons() {
 
-   const { audio, audioPath, setAudioPath, togglePlayPause, isAudioPaused, setIsAudioPaused } = useContext(SongContext);
+   const { audio, audioPath, setAudioPath, togglePlayPause } = useContext(SongContext);
    const currentTrack = songList.find(track => track.path === audioPath);
 
    const [playPauseIcon, setPlayPauseIcon] = useState(pauseIcon);

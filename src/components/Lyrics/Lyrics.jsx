@@ -1,17 +1,35 @@
-import React, { useEffect, useRef, useContext } from 'react';
+import React, { useEffect, useRef, useContext, useState } from 'react';
 import './Lyrics.scss';
 import './Lyrics-media.scss';
 import { SongContext } from '../../context/song-context';
 
 import arrowRightIcon from '../../assets/img/arrow-right.svg';
+import LyricsIcon from './LyricsIcon';
+import lyricsIcon from '../../assets/img/lyrics.svg';
+import noLyricsIcon from '../../assets/img/no-lyrics.svg';
 
 function Lyrics() {
 
-  const { lyricsTextRef } = useContext(SongContext);
+  const { lyricsTextRef, currentAudioData } = useContext(SongContext);
 
   const lyricsRef = useRef(null);
   const showBtnRef = useRef(null);
   const arrowRef = useRef(null);
+
+  const [songLyrics, setSongLyrics] = useState([]);
+  const [currentLyricsIcon, setCurrentLyricsIcon] = useState(lyricsIcon);
+
+  const returnLyricsJSX = () => {
+    return (
+      <p ref={lyricsTextRef}>
+        {songLyrics.map((songString, index) => (
+        <React.Fragment key={index}>
+          {songString}<br />
+        </React.Fragment>
+        ))}
+      </p>
+    );
+  }
 
   const handleLyricsShow = () => {
     const lyricsTransformProperty = `translateX(calc(100% - ${showBtnRef.current.offsetWidth}px))`;
@@ -27,6 +45,20 @@ function Lyrics() {
   }
 
   useEffect(() => {
+
+    if ('id' in currentAudioData && !(currentAudioData.lyrics)) {
+       setCurrentLyricsIcon(noLyricsIcon);
+    }
+
+    if (currentAudioData && currentAudioData.lyrics) {
+      const formattedLyrics = currentAudioData.lyrics.split('\n');
+      setSongLyrics(formattedLyrics);
+      setCurrentLyricsIcon(noLyricsIcon);
+    }
+  }, [currentAudioData])
+
+  useEffect(() => {
+
     const handleResize = () => {
       const lyricsTransformProperty = `translateX(calc(100% - ${showBtnRef.current.offsetWidth}px))`;
 
@@ -45,39 +77,13 @@ function Lyrics() {
         <p>T</p>
         <img src={arrowRightIcon} ref={arrowRef} alt="Show lyrics of song" />
       </button>
-      <p ref={lyricsTextRef}>
-        Lorem ipsum dolor sit amet<br />
-        Consectetur adipiscing elit.<br />
-        Morbi orci mi<br />
-        scelerisque et <br />
-        <br />
-        aliquet at,<br />
-        fermentum et erat<br />
-        Proin consectetur egestas sem<br />
-        consequat pellentesque<br />
-        <br />
-        Nam id scelerisque dolor<br />
-        eget venenatis est<br />
-        <br />
-        Sed vitae rhoncus nulla<br />
-        sit amet porttitor magna.<br />
-        Curabitur finibus felis viverra<br />
-        augue accumsan, ut molestie<br />
-        <br />
-        leo gravida.<br />
-        Vivamus vitae sem eget elit porta<br />
-        vulputate eget in metus.<br />
-        Ut hendrerit nibh tortor<br />
-        ut accumsan dolor rutrum ut<br />
-        <br />
-        Sed laoreet pulvinar urna, ac<br />
-        convallis velit euismod posuere<br />
-        Donec hendrerit erat ut maximus<br />
-        dictum. Duis sit amet ultrices<br />
-        quam<br />
-        <br />
-        Nam non tellus
-      </p>
+
+      {currentAudioData.lyrics ? (
+        returnLyricsJSX()
+      ) : (
+        <LyricsIcon icon={currentLyricsIcon}/>
+      )}
+
     </section>
 
   )

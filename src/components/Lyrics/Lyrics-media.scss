@@ -8,16 +8,26 @@
 
 @media (max-width: 1210px) {
 
-   .lyrics > p {
-      font-size: 20px;
+   .lyrics {
+      & > p {
+         font-size: 20px;
+      }
    }
 
 }
 
 @media (max-width: 1000px) {
 
-   .lyrics > p {
-      font-size: 15px;
+   .lyrics {
+      min-width: 320px;
+
+      &:has(.lyrics-icon_wrap) {
+         max-width: 320px;
+      }
+
+      & > p {
+         font-size: 15px;
+      }
    }
 
 }
@@ -25,6 +35,7 @@
 @media (max-width: 745px) {
 
    .lyrics {
+      min-width: 325px;
       position: fixed;
       top: 0;
       right: 0;
@@ -33,14 +44,18 @@
       transform: translateX(calc(100% - 43.6px));
       transition: transform 0.2s linear;
 
+      &:has(.lyrics-icon_wrap) {
+         padding: 0 25px 0 0;
+      }
+
       #lyrics-show {
          display: flex;
          flex-direction: column;
          gap: 10px;
+         flex-shrink: 0;
          width: 45px;
          align-items: center;
          justify-content: center;
-         margin-left: auto;
          font-family: 'Poppins';
          font-size: 23px;
          color: $main-grey;
@@ -54,6 +69,10 @@
             transform: rotate(180deg); // gets changed in js
          }
       }
+   }
+
+   .lyrics-icon_wrap{
+      flex-grow: 1;
    }
 }
 

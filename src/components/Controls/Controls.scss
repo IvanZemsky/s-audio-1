@@ -1,6 +1,6 @@
 @import '../../_var.scss';
 
-.controls{
+.controls {
    position: fixed;
    bottom: 0;
    left: 0;
@@ -12,7 +12,7 @@
    z-index: 200;
 }
 
-.controls-content{
+.controls-content {
    display: grid;
    grid-template-rows: auto;
    grid-template-columns: 685px 1fr;
@@ -26,80 +26,120 @@
 }
 
 .controls-common,
-.controls-additional{
+.controls-additional {
    display: flex;
    align-items: center;
 }
 
-.controls-additional{
+.controls-additional {
    justify-content: space-between;
    gap: 15px;
 }
 
-.controls-info-wrap{
+// ControlsInfoShow.jsx
+.controls-info-copy {
+   position: absolute;
+   bottom: 105px;
+   left: 4.68vw;
+   width: 300px;
+   max-height: 350px;
+   padding: 10px;
+   border-radius: 10px;
+   line-height: 1.4;
+   background-color: #DCDCDC;
+   overflow-y: auto;
+   transition: opacity 3s ease, transform 3s ease;
+
+   &.show {
+      opacity: 1;
+      transform: translateY(100%);
+   }
+
+   &.hide {
+      opacity: 0;
+      transform: translateY(100%);
+   }
+
+   &_name {
+      font-weight: 500;
+      margin-bottom: 10px;
+   }
+}
+
+.controls-info-wrap {
+   position: relative;
    display: flex;
    align-items: center;
+   width: 45%;
    height: 39px;
    margin-right: 9.88%; // of .controls-common
    overflow: auto;
+   background-color: #DCDCDC;
+   transition: transform .2s linear;
+   z-index: 250;
 
-   .controls-info{
-      height: 33px;
-      font-size: 29px;
+   .controls-info {
+      height: 25px;
+      font-size: 22px;
       font-weight: 500;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
    }
+
 }
 
-#copySongInfo{
-   height: 100%;
-   margin-right: 9.88%; // of .controls-common
+#openSongInfo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 45px;
+   height: 45px;
+   margin-right: 9%; // of .controls-common
    cursor: pointer;
-
-   img{
-      width: 30px;
-      height: auto;
-   }
+   font-family: 'Poppins';
+   font-size: 30px;
+   font-weight: 500;
+   border-radius: 5px;
+   background-color: #c0c0c0;
 }
 
-.controls-buttons{
+.controls-buttons {
    display: flex;
    justify-content: space-between;
    align-items: center;
    gap: 49px;
-   width: 29.01%;
+   //width: 29.01%;
    max-width: 310px;
 
-   button{
+   button {
       cursor: pointer;
    }
 
-   #playSong{
+   #playSong {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100%;
    }
 
-   .controls-pause{
+   .controls-pause {
       width: 33px;
       height: auto;
    }
-   
+
    .controls-previous,
-   .controls-next{
+   .controls-next {
       width: 31px;
       height: auto;
    }
-   
-   .controls-next{
+
+   .controls-next {
       transform: rotate(180deg);
    }
 }
 
-.controls-timeline{
+.controls-timeline {
    display: flex;
    align-items: center;
    width: 53.2%;
@@ -108,27 +148,27 @@
    font-size: 18px;
    color: $main-grey;
 
-   p:nth-child(1){
+   p:nth-child(1) {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       width: 40px;
       margin-right: 11px;
    }
 
-   #songTimeline{
+   #songTimeline {
       flex: 1 1 83.85%;
       margin-right: 7px;
    }
 }
 
 #songTimeline,
-#songVolume{
+#songVolume {
    -webkit-appearance: none;
    height: 5px;
    background-color: $main-blue;
    cursor: pointer;
 
-   &::-webkit-slider-thumb{
+   &::-webkit-slider-thumb {
       -webkit-appearance: none;
       width: 10px;
       height: 10px;
@@ -139,27 +179,27 @@
    }
 }
 
-.controls-volume{
+.controls-volume {
    display: flex;
    align-items: center;
    flex: 0 1 25.84%;
    gap: 14px;
 
-   #songVolume{
+   #songVolume {
       width: 96.59%;
    }
 
-   .controls-volume_img svg{
+   .controls-volume_img svg {
       width: 27px;
       height: 25px;
    }
 }
 
-#repeatSong{
+#repeatSong {
    flex-shrink: 0;
    cursor: pointer;
 
-   .controls-repeat{
+   .controls-repeat {
       width: 39px;
       height: auto;
    }

@@ -1,18 +1,20 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Controls.scss';
 import './Controls-media.scss';
 import { SongContext } from '../../context/song-context';
-import {songList} from '../../song-data/song-list'
 
 import ControlsAdditional from '../UI/ControlsAdditional/ControlsAdditional';
 import TimelineInput from '../UI/TimelineInput.jsx/TimelineInput';
 import ControlsButtons from '../UI/ControlsButtons/ControlsButtons';
 
-import copySongInfoBtn from '../../assets/img/copy.svg';
+import ControlsInfoShow from '../UI/ControlsInfoShow/ControlsInfoShow';
 
-function Controls({songList}) {
+function Controls() {
 
-  const { audioPath, audio, controlsRef, setTimelineValue } = useContext(SongContext);
+  const { audioPath, audio, controlsRef, 
+    currentAudioData, setTimelineValue, setCurrentAudioData } = useContext(SongContext);
+
+  const [showSongInfo, setShowSongInfo] = useState(false);
 
   const browserWidth = window.innerWidth;
   const controlsAppearanceStyle = (audioPath) ? { transform: 'translateY(0%)' } : null;
@@ -33,6 +35,10 @@ function Controls({songList}) {
     }
   }
 
+  const handleOpenInfoClick = () => {
+    setShowSongInfo(!showSongInfo);
+  }
+
   return (
     <section className="controls" style={controlsAppearanceStyle} ref={controlsRef}>
 
@@ -47,13 +53,15 @@ function Controls({songList}) {
 
       <div className="controls-content">
 
+        {showSongInfo && <ControlsInfoShow showSongInfo={showSongInfo}/>}
+
         <div className="controls-common">
           <div className="controls-info-wrap">
-            <p className="controls-info">Song name - Singer</p>
+            <p className="controls-info">{currentAudioData.name} - {currentAudioData.singer}</p>
           </div>
 
-          <button id='copySongInfo' type='button'>
-            <img src={copySongInfoBtn} alt="Copy song name and singer" />
+          <button id='openSongInfo' type='button' onClick={handleOpenInfoClick}>
+            i
           </button>
 
           <ControlsButtons/>

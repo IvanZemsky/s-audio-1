@@ -1,11 +1,11 @@
 import { createContext, useState, useRef } from 'react'
-
+import { songList } from '../song-data/song-list';
 export const SongContext = createContext(null);
 
 export function SongContextValues(props) {
 
+   const [songArray, setSongArray] = useState(songList);
    const [audioPath, setAudioPath] = useState('');
-   const [isAudioPaused, setIsAudioPaused] = useState(false);
    const [currentAudioData, setCurrentAudioData] = useState({}); // from song-list.js
    const [timelineValue, setTimelineValue] = useState(0);
 
@@ -16,17 +16,15 @@ export function SongContextValues(props) {
    const togglePlayPause = () => {
       if (audio.current.paused) {
          audio.current.play();
-         //setIsAudioPaused(audio.current.paused);
       }
       else {
          audio.current.pause();
-         //setIsAudioPaused(audio.current.paused);
       }
    }
    
    const contextValues = {
+      songArray, setSongArray,
       audioPath, setAudioPath,
-      isAudioPaused, setIsAudioPaused,
       timelineValue, setTimelineValue,
       audio, controlsRef, lyricsTextRef,
       currentAudioData, setCurrentAudioData,

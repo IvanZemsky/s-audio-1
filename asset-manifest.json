@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/s-audio-1/static/css/main.2861d355.css",
-    "main.js": "/s-audio-1/static/js/main.27d4e517.js",
+    "main.css": "/s-audio-1/static/css/main.1e66892f.css",
+    "main.js": "/s-audio-1/static/js/main.cfa54f70.js",
     "static/media/UpbeatInspiration-2.mp3": "/s-audio-1/static/media/UpbeatInspiration-2.0abaf0898cffbff8172d.mp3",
     "static/media/UpbeatInspiration.mp3": "/s-audio-1/static/media/UpbeatInspiration.0abaf0898cffbff8172d.mp3",
     "static/media/battle-of-the-dragons-2.mp3": "/s-audio-1/static/media/battle-of-the-dragons-2.8a3bddd4d5649503333e.mp3",
@@ -18,16 +18,18 @@
     "static/media/happy-day-cover.jpg": "/s-audio-1/static/media/happy-day-cover.c8804a59b805514a439a.jpg",
     "static/media/upbeat-inspiration-cover.jpg": "/s-audio-1/static/media/upbeat-inspiration-cover.f82bb9e8ad989753ac87.jpg",
     "static/media/battle-dragons-cover.jpg": "/s-audio-1/static/media/battle-dragons-cover.880c9c1fd18a38c1f298.jpg",
-    "static/media/next-prev.svg": "/s-audio-1/static/media/next-prev.2efd16898be1b09028d15f30b61356b8.svg",
+    "static/media/lyrics.svg": "/s-audio-1/static/media/lyrics.d9c8840ebe16bae1363ca2569a516f55.svg",
+    "static/media/no-lyrics.svg": "/s-audio-1/static/media/no-lyrics.60eb03b63d38583025ccf176d2b55e56.svg",
+    "static/media/next-prev.svg": "/s-audio-1/static/media/next-prev.5a2fd0e0b033053a89a53bbafde789c2.svg",
     "index.html": "/s-audio-1/index.html",
-    "static/media/pause.svg": "/s-audio-1/static/media/pause.44fde7ae67df5ee23c245150f2b5f05f.svg",
-    "static/media/arrow-right.svg": "/s-audio-1/static/media/arrow-right.841ad35a544a9470b1b2d17f3eee9746.svg",
-    "static/media/play.svg": "/s-audio-1/static/media/play.e49b6eda6490c75143fe00edfb471489.svg",
-    "main.2861d355.css.map": "/s-audio-1/static/css/main.2861d355.css.map",
-    "main.27d4e517.js.map": "/s-audio-1/static/js/main.27d4e517.js.map"
+    "static/media/pause.svg": "/s-audio-1/static/media/pause.f98c5f68fa3507c9b535a7722c8fc7f4.svg",
+    "static/media/arrow-right.svg": "/s-audio-1/static/media/arrow-right.7ac6a1c16287a70fc58d639f8f345a72.svg",
+    "static/media/play.svg": "/s-audio-1/static/media/play.be7d928df77576803889a71df0e74e3b.svg",
+    "main.1e66892f.css.map": "/s-audio-1/static/css/main.1e66892f.css.map",
+    "main.cfa54f70.js.map": "/s-audio-1/static/js/main.cfa54f70.js.map"
   },
   "entrypoints": [
-    "static/css/main.2861d355.css",
-    "static/js/main.27d4e517.js"
+    "static/css/main.1e66892f.css",
+    "static/js/main.cfa54f70.js"
   ]
 }
